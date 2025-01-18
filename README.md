@@ -1,35 +1,63 @@
-` # Sanic To-Do Application 📝  This is a simple **To-Do application** built using the [Sanic Framework](https://sanic.dev/en/). The application demonstrates how to use Sanic for asynchronous request handling in Python.  ---  ## Features 🚀 - Add a new task. - Retrieve all tasks. - Delete a task.  ---  ## Getting Started 🛠️  Follow these steps to set up and run the project locally.  ### Prerequisites 📋 - Python 3.7 or higher installed. - Basic knowledge of Python and HTTP requests.  ### Setup Instructions ⚙️  1. **Clone the repository**      ```bash    git clone https://github.com/your-username/sanic-todo-app.git    cd sanic-todo-app `
+# Sanic To-Do Application 📝 This is a simple
 
-2.  **Create and activate a virtual environment**
+## To-Do Application built using the \[Sanic Framework\](https://sanic.dev/en/). The application demonstrates how to use Sanic for asynchronous request handling in Python.
 
-    bash
+## Features 🚀
 
-    CopyEdit
+- Add a new task.
+- Retrieve all .
+- Delete a task.
 
-    `python -m venv venv  # Create virtual environment source venv/bin/activate  # Activate on Linux/Mac venv\Scripts\activate     # Activate on Windows`
+---
 
-3.  **Install dependencies**
+## Getting Started
 
-    bash
+🛠️ Follow these steps to set up and run the project locally.
 
-    CopyEdit
+### Prerequisites 📋
 
-    `pip install sanic`
+- Python 3.7 or higher installed.
+- Basic knowledge of Python and HTTP requests.
 
-4.  **Run the application**
+### Setup Instructions ⚙️
 
-    bash
+1. Clone the repository
 
-    CopyEdit
+   ```bash git clone https://github.com/your-username/sanic-todo-app.git
+   cd sanic-todo-app
+   ```
 
-    `python app.py`
+2. Create and activate a virtual environment
 
-5.  **Access the application**  
-    Open your browser or use Postman to access the following endpoints:
+   ```bash
+   python -m venv venv     # Create virtual environment
 
-    - **Add Task**: `POST http://localhost:8000/add`
-    - **Get All Tasks**: `GET http://localhost:8000/tasks`
-    - **Delete Task**: `DELETE http://localhost:8000/delete/<task_id>`
+   source venv/bin/activate    # Activate on Linux/Mac
+
+   venv\Scripts\activate     # Activate on Windows
+   ```
+
+3. Install dependencies
+
+   ```bash
+   pip install sanic
+   ```
+
+4. Run the application
+
+   ```bash
+   python app.python
+   ```
+
+5. Access the application
+
+   Open your browser or use Postman to access the following endpoints:
+
+   - Add Task: \`POST http://localhost:8000/add\`
+
+   - Get All Tasks: \`GET http://localhost:8000/tasks\`
+
+   - Delete Task: \`DELETE http://localhost:8000/delete/\`
 
 ---
 
@@ -37,51 +65,36 @@
 
 ### 1\. Add a Task
 
-**POST** `/add`
+POST `add\`
 
-- **Body**:
+Body:
 
-  json
+```json
+{ "task": "Your task here" }
+```
 
-  CopyEdit
+Response:
 
-  `{   "task": "Your task here" }`
-
-- **Response**:
-
-  json
-
-  CopyEdit
-
-  `{   "message": "Task added!",   "task": {     "id": 1,     "task": "Your task here"   } }`
+```json
+{ "message": "Task added!", "task": { "id": 1, "task": "Your task here" } }
+```
 
 ### 2\. Get All Tasks
 
-**GET** `/tasks`
+GET `tasks`
 
-- **Response**:
+Response:
 
-  json
-
-  CopyEdit
-
-  `{   "tasks": [     {       "id": 1,       "task": "Your task here"     }   ] }`
+```json
+{ "tasks": [{ "id": 1, "task": "Your task here" }] }
+```
 
 ### 3\. Delete a Task
 
-**DELETE** `/delete/<task_id>`
+DELETE `delete/`
 
-- **Response**:
+Response:
 
-  json
-
-  CopyEdit
-
-  `{   "message": "Task with id <task_id> deleted!" }`
-
----
-
-## References 📖
-
-- Sanic Documentation
-- Official Guide to Setting Up Sanic
+```json
+{ "message": "Task with id deleted!" }
+```
